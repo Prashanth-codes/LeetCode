@@ -1,11 +1,11 @@
 class Solution:
     def addOperators(self, num: str, target: int) -> List[str]:
-        ans=set()
+        ans=[]
         n=len(num)
         def backtrack(s,idx,v,l):
             if idx==n:
                 if v==target:
-                    ans.add(s)
+                    ans.append(s)
                 return
             for i in range(idx,n):
                 temp=num[idx:i+1]
@@ -19,4 +19,4 @@ class Solution:
                     backtrack(s+"-"+temp,i+1,v-no,-no)
                     backtrack(s+"*"+temp,i+1,v-l+(l*no),l*no)
         backtrack("",0,0,0)
-        return list(ans)
+        return ans
