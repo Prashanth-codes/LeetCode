@@ -1,17 +1,6 @@
 class Solution:
     def maxAbsoluteSum(self, nums: List[int]) -> int:
-        ans,temp=0,0
+        p=[0]
         for i in nums:
-            if i>temp+i:
-                temp=i
-            else:
-                temp+=i
-            ans=max(ans,temp)
-        temp=0
-        for i in nums:
-            if i<temp+i:
-                temp=i
-            else:
-                temp+=i
-            ans=max(ans,abs(temp))
-        return ans
+            p.append(p[-1]+i)
+        return max(p)-min(p)
