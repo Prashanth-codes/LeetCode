@@ -11,6 +11,5 @@ class Solution:
                 while temp in s:
                     prev,temp=temp,temp+prev
                     c+=1
-                if c!=2:
                     ans=max(ans,c)
         return ans
