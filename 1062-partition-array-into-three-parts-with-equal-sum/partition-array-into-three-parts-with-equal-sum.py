@@ -11,6 +11,6 @@ class Solution:
             if s==t:
                 c+=1
                 s=0
-            if c==2:
-                return True
+                if c==2:
+                    return True
         return False
